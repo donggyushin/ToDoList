@@ -1,0 +1,28 @@
+.todoitem__container {
+    display: flex;
+
+}
+
+.todoitem__remove {
+    width: 20%;
+    padding-left: 40px;
+    color: brown;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.todoitem__todo-text {
+    width: 60%;
+    font-size: 20px;
+}
+
+.todoitem__check-mark {
+    width: 20%;
+    font-size: 25px;
+    color: aqua;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: #A3A3A1;
+}

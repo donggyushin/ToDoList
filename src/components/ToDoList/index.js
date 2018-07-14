@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles.css";
 import Form from "../Form/form";
+import ToDoItemList from "../ToDoItemList/ToDoItemList";
 
-const ToDoList = ({ children }) => {
+const ToDoList = () => {
   return (
     <main className="todolist-template">
       <div className="title">
@@ -11,7 +12,9 @@ const ToDoList = ({ children }) => {
       <section className="form-wrapper">
         <Form />
       </section>
-      <section className="todos-wrapper">{children}</section>
+      <section className="todos-wrapper">
+        <ToDoItemList />
+      </section>
     </main>
   );
 };

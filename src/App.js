@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App-container">
-        <ToDoList children={"template 완성"} />
+        <ToDoList />
       </div>
     );
   }

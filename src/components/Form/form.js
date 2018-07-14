@@ -6,11 +6,31 @@ class Form extends Component {
     todo: ""
   };
 
-  _handleChange = e => {
+  static defaultProps = {
+    createNewToDo: () => {
+      console.log("createNewToDo not defined");
+    }
+  };
+
+  _createNewToDo = () => {
     const { todo } = this.state;
+    const { createNewToDo } = this.props;
+    createNewToDo(todo);
+    this.setState({
+      todo: ""
+    });
+  };
+
+  _handleChange = e => {
     this.setState({
       todo: e.target.value
     });
+  };
+
+  _clickEnter = e => {
+    if (e.key === "Enter") {
+      this._createNewToDo();
+    }
   };
 
   render() {
@@ -22,8 +42,11 @@ class Form extends Component {
           onChange={this._handleChange}
           className="form-input"
           placeholder="Input ToDo"
+          onKeyPress={this._clickEnter}
         />
-        <button className="button">ADD</button>
+        <button onClick={this._createNewToDo} className="button">
+          ADD
+        </button>
       </div>
     );
   }

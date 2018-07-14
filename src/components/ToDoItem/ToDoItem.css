@@ -9,7 +9,13 @@
     color: brown;
     font-weight: 700;
     font-size: 30px;
+    opacity: 0;
 }
+
+.todoitem__container:hover .todoitem__remove {
+    opacity: 1;
+}
+
 
 .todoitem__todo-text {
     width: 60%;

@@ -13,6 +13,10 @@ class ToDoItem extends Component {
     }
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.todos !== nextProps.todos;
+  }
+
   _clickX = e => {
     const { id, deleteToDo } = this.props;
 

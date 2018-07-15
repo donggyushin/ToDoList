@@ -3,6 +3,10 @@ import "./ToDoItemList.css";
 import ToDoItem from "../ToDoItem/ToDoItem";
 
 class ToDoItemList extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.todos !== nextProps.todos;
+  }
+
   render() {
     const { todos, deleteToDo } = this.props;
     const todoItems = todos.map(todo => {

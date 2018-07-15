@@ -21,12 +21,15 @@ class ToDoItem extends Component {
     const { checked } = this.state;
     const { text } = this.props;
     return (
-      <div className="todoitem__container" onClick={this._handleOnToggle}>
-        <div className="todoitem__remove">&times;</div>
-        <div className={`todoitem__todo-text ${checked && "checked"}`}>
-          {text}
+      <div>
+        <hr />
+        <div className="todoitem__container" onClick={this._handleOnToggle}>
+          <div className="todoitem__remove">&times;</div>
+          <div className={`todoitem__todo-text ${checked && "checked"}`}>
+            {text}
+          </div>
+          <div className="todoitem__check-mark">{checked && "✓"}</div>
         </div>
-        <div className="todoitem__check-mark">{checked && "✓"}</div>
       </div>
     );
   }

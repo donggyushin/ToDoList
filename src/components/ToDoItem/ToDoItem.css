@@ -1,5 +1,6 @@
 .todoitem__container {
     display: flex;
+    flex: 1;
 
 }
 
@@ -20,6 +21,8 @@
 .todoitem__todo-text {
     width: 60%;
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .todoitem__check-mark {
@@ -31,4 +34,7 @@
 .checked {
     text-decoration: line-through;
     color: #A3A3A1;
+}
+ hr {
+    flex-grow: 1;
 }

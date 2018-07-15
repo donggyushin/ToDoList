@@ -13,10 +13,6 @@ class ToDoItem extends Component {
     }
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props.todos !== nextProps.todos;
-  }
-
   _clickX = e => {
     const { id, deleteToDo } = this.props;
 
@@ -26,6 +22,7 @@ class ToDoItem extends Component {
 
   _handleOnToggle = () => {
     const { checked } = this.state;
+    console.log("확인");
     this.setState({
       checked: !checked
     });

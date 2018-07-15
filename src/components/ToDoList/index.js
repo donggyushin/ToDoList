@@ -4,7 +4,7 @@ import Form from "../Form/form";
 import ToDoItemList from "../ToDoItemList/ToDoItemList";
 
 const ToDoList = props => {
-  const { createNewToDo, todos } = props;
+  const { createNewToDo, todos, deleteToDo } = props;
 
   return (
     <main className="todolist-template">
@@ -15,7 +15,7 @@ const ToDoList = props => {
         <Form createNewToDo={createNewToDo} />
       </section>
       <section className="todos-wrapper">
-        <ToDoItemList todos={todos} />
+        <ToDoItemList todos={todos} deleteToDo={deleteToDo} />
       </section>
     </main>
   );

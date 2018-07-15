@@ -4,9 +4,16 @@ import ToDoItem from "../ToDoItem/ToDoItem";
 
 class ToDoItemList extends Component {
   render() {
-    const { todos } = this.props;
+    const { todos, deleteToDo } = this.props;
     const todoItems = todos.map(todo => {
-      return <ToDoItem key={todo.id} text={todo.text} />;
+      return (
+        <ToDoItem
+          key={todo.id}
+          deleteToDo={deleteToDo}
+          id={todo.id}
+          text={todo.text}
+        />
+      );
     });
     return <div className="container">{todoItems}</div>;
   }

@@ -7,7 +7,17 @@ class ToDoItem extends Component {
   };
 
   static defaultProps = {
-    text: "text"
+    text: "text",
+    deleteToDo: () => {
+      console.log("deleteToDo not defined");
+    }
+  };
+
+  _clickX = e => {
+    const { id, deleteToDo } = this.props;
+
+    e.stopPropagation();
+    deleteToDo(id);
   };
 
   _handleOnToggle = () => {
@@ -24,7 +34,9 @@ class ToDoItem extends Component {
       <div>
         <hr />
         <div className="todoitem__container" onClick={this._handleOnToggle}>
-          <div className="todoitem__remove">&times;</div>
+          <div onClick={this._clickX} className="todoitem__remove">
+            &times;
+          </div>
           <div className={`todoitem__todo-text ${checked && "checked"}`}>
             {text}
           </div>
